@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
-@RequestMapping("/api/attractions")
+@RequestMapping("/api/attraction")
 public class AttractionController {
     private final AttractionService service;
 
@@ -40,4 +42,10 @@ public class AttractionController {
     public void deleteAttraction(@PathVariable Long id) {
         service.deleteAttraction(id);
     }
+
+    @GetMapping
+    public List<AttractionDTO> getAllAttractions() {
+        return service.getAllAttractions();
+    }
+
 }

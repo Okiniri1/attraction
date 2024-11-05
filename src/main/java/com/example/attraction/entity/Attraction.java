@@ -12,7 +12,6 @@ import lombok.Setter;
 public class Attraction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     @NotNull
     private String name;
